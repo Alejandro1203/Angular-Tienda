@@ -28,6 +28,11 @@ export class ProductDetailsComponent {
   
     // Find the product that correspond with the id provided in route.
     this.product = products.find(product => product.id === productIdFromRoute);
-  }
 
+    if(this.product != undefined) {
+       if(this.product.stock < 4) {
+        window.alert('Quedan pocas unidades')
+      }
+    }
+  }
 }
